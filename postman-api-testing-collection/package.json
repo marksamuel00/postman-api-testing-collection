@@ -1,0 +1,14 @@
+{
+  "name": "postman-api-testing-collection",
+  "version": "1.0.0",
+  "description": "Postman API test collections with Newman CLI runner for CI/CD integration",
+  "scripts": {
+    "test": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json",
+    "test:verbose": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json --verbose",
+    "test:report": "newman run collections/reqres-api-tests.postman_collection.json -e environments/reqres-env.postman_environment.json -r htmlextra --reporter-htmlextra-export reports/test-report.html"
+  },
+  "devDependencies": {
+    "newman": "^6.1.0",
+    "newman-reporter-htmlextra": "^1.23.0"
+  }
+}
